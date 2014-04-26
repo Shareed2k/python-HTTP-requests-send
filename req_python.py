@@ -26,7 +26,7 @@ cash = hmac.new(key, msg=msg, digestmod=hashlib.sha256).hexdigest()
 
 headers = {'API_ID': 1, 'API_TIME': int(ts), 'API_HASH': cash}
 
-r = requests.post('http://ne-govori-mne.net', data=s, headers=headers)
+r = requests.post('https://ne-govori-mne.net', data=s, headers=headers, verify=False)
 
 #print r.headers, "\n"
 for v in r.headers.values():
